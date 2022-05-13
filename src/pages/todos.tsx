@@ -13,12 +13,12 @@ export const Todos: React.FC = () => {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
+        minHeight: "calc(100vh - 160px)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: matches ? 0 : "80px 0",
+        padding: "80px 0",
       }}
     >
       <Container>

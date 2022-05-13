@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
           padding: "8px 0",
           boxShadow: "none",
           fontSize: 0,
-          backgroundColor: "transparent",
+          backgroundColor: "#F0F4FA",
         }}
         color="inherit"
       >
