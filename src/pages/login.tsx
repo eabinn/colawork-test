@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container, Box, FormControl, FormHelperText } from "@mui/material";
 import { TitleTypography } from "../components/TitleTypography";
 import { LoginTextField } from "../components/LoginTextField";
 import { LoginButton } from "../components/LoginButton";
-
-import { useAuthState } from "../contexts/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { useAuthState } from "../hooks/useAuthContext";
 
 type LoginFormType = {
   email: string;

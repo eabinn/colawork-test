@@ -1,6 +1,6 @@
 import Input, { InputProps } from "@mui/material/Input";
 import { styled } from "@mui/material/styles";
-import { TodoType } from "../contexts/TodoProvider";
+import { TodoType } from "../contexts/TodoProvider/todo.types";
 
 interface StyledInputProps extends InputProps {
   done?: boolean;

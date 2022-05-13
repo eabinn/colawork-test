@@ -1,33 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import useCookies from "../hooks/useCookies";
-import { APIErrorResponse } from "../network/APIClient";
-import loginService from "../services/todos/login-service";
-
-type LoginInputType = {
-  user_id: string;
-  user_pw: string;
-};
-
-export type AuthContextType = {
-  login: (input: LoginInputType) => Promise<void>;
-  logout: () => void;
-  authLoading: boolean;
-  authErrorMsg: string;
-  resetAuthErrorMsg: () => void;
-  isUserLogin: boolean;
-};
+import React, { createContext, useEffect, useState } from "react";
+import useCookies from "../../hooks/useCookies";
+import { APIErrorResponse } from "../../network/APIClient";
+import loginService from "../../services/todos/login-service";
+import { AuthContextType, LoginInputType } from "./auth.types";
 
 export const AuthContext = createContext<AuthContextType | null>(null);
-
-export function useAuthState() {
-  const state = useContext(AuthContext);
-
-  if (!state) {
-    throw new Error("Cannot find AuthProvider");
-  }
-
-  return state;
-}
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isUserLogin, setIsUserLogin] = useState(false);

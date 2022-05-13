@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTodoState } from "../contexts/TodoProvider";
 import { TodoBox } from "../components/TodoBox";
+import { useTodoState } from "../hooks/useTodoContext";
 
 export const Todos: React.FC = () => {
   const theme = useTheme();

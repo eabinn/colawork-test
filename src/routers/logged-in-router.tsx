@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, PathRouteProps } from "react-router-dom";
 import { Header } from "../components/header";
-import { TodoProvider } from "../contexts/TodoProvider";
+import { TodoProvider } from "../contexts/TodoProvider/TodoProvider";
 import { NotFound } from "../pages/NotFound";
 import { Todos } from "../pages/todos";
 

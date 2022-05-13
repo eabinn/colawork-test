@@ -1,45 +1,11 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import meService from "../services/todos/me-service";
-import { useAuthState } from "./AuthProvider";
-
-type Todo = {
-  id: number;
-  value: string;
-};
-
-export type TodoType = "notDone" | "done";
-
-export type TodoContextType = {
-  todos: Todo[];
-  doneTodos: Todo[];
-  addTodo: () => void;
-  completeTodo: (id: number) => void;
-  editTodo: (type: TodoType, id: number, value: string) => void;
-  deleteTodo: (type: TodoType, id: number) => void;
-  addDisabled: boolean;
-  deleteDisabled: boolean;
-};
+import { useAuthState } from "../../hooks/useAuthContext";
+import meService from "../../services/todos/me-service";
+import { Todo, TodoContextType, TodoType } from "./todo.types";
+import { isTodosMax, isTodosMin } from "./utils";
 
 export const TodoContext = createContext<TodoContextType | null>(null);
-
-export function useTodoState() {
-  const state = useContext(TodoContext);
-
-  if (!state) {
-    throw new Error("Cannot find TodoProvider");
-  }
-
-  return state;
-}
-
-function isTodosMax(todos: Todo[]) {
-  return todos.length >= 10;
-}
-
-function isTodosMin(todos: Todo[]) {
-  return todos.length === 1;
-}
 
 function getNotDuplicatedId(ids: number[]) {
   let id = 0;

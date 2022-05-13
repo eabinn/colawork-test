@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Stack } from "@mui/material";
 import { TodoInput } from "../components/TodoInput";
 import { TodoActionButton } from "../components/TodoActionButton";
-import { TodoType, useTodoState } from "../contexts/TodoProvider";
+import { TodoType } from "../contexts/TodoProvider/todo.types";
 import { Todo } from "../services/todos/me-service";
+import { useTodoState } from "../hooks/useTodoContext";
 
 type TodoRowProps = {
   todo: Todo;

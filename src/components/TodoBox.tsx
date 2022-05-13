@@ -3,9 +3,9 @@ import { Box, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { TitleTypography } from "../components/TitleTypography";
-import { TodoContextType, TodoType } from "../contexts/TodoProvider";
 import { TodoRow } from "../components/TodoRow";
 import { TodoAddButton } from "./TodoAddButton";
+import { TodoContextType, TodoType } from "../contexts/TodoProvider/todo.types";
 
 type TodoBoxProps = {
   todoType: TodoType;

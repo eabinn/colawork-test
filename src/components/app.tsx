@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { LoggedInRouter } from "../routers/logged-in-router";
 import { LoggedOutRouter } from "../routers/logged-out-router";
-import { useAuthState } from "../contexts/AuthProvider";
+import { useAuthState } from "../hooks/useAuthContext";
 
 export const App = () => {
   const authState = useAuthState();
