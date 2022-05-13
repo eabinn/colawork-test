@@ -1,8 +1,7 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, PathRouteProps } from "react-router-dom";
+import { BrowserRouter, Routes, Route, PathRouteProps, Navigate } from "react-router-dom";
 import { Header } from "../components/header";
 import { Login } from "../pages/login";
-import { NotFound } from "../pages/NotFound";
 
 const routes: PathRouteProps[] = [
   {
@@ -16,7 +15,7 @@ export const LoggedOutRouter: React.FC = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Navigate replace to="/" />} />
         {routes.map((route) => (
           <Route path={route.path} element={route.element} key={route.path} />
         ))}
