@@ -44,7 +44,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       cookies.set("access-token", result["access_token"]);
     } catch (err) {
       if (err && typeof err === "object" && "msg" in err) {
-        setAuthErrorMsg((err as APIErrorResponse).msg);
+        const msg = (err as APIErrorResponse).msg;
+        setAuthErrorMsg(msg);
+        throw new Error(msg);
       }
     } finally {
       setAuthLoading(false);

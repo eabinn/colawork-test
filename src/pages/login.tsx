@@ -44,9 +44,10 @@ export const Login: React.FC = () => {
     }
     try {
       await authState.login({ user_id: form.email, user_pw: form.password });
-
       navigate("/list");
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
